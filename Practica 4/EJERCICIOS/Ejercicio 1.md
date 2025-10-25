@@ -1,9 +1,9 @@
 # DBD-2025
 
-Cliente = (idCliente, nombre, apellido, DNI, telefono, direccion)
-Factura = (nroTicket, total, fecha, hora, idCliente (fk))
-Detalle = (nroTicket (fk), idProducto (fk), cantidad, preciounitario)
-Producto = (idProducto, nombreP, descripcion, precio, stock)
+- Cliente = (idCliente, nombre, apellido, DNI, telefono, direccion)
+- Factura = (nroTicket, total, fecha, hora, idCliente (fk))
+- Detalle = (nroTicket (fk), idProducto (fk), cantidad, preciounitario)
+- Producto = (idProducto, nombreP, descripcion, precio, stock)
 
 ### Ejercicio 1
 
