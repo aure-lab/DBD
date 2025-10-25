@@ -7,7 +7,7 @@
 
 ### Iniciso 1
 
-> Listar datos personales de clientes cuyo apellido comience con el string ‘Pe’. Ordenar por DNI.
+* Listar datos personales de clientes cuyo apellido comience con el string ‘Pe’. Ordenar por DNI.
 
 ```sql
 SELECT nombre, apellido, DNI, telefono, direccion
@@ -18,8 +18,8 @@ ORDER BY DNI
 
 ### Iniciso 2
 
-> Listar nombre, apellido, DNI, teléfono y dirección de clientes que realizaron compras solamente
-> durante 2024.
+* Listar nombre, apellido, DNI, teléfono y dirección de clientes que realizaron compras solamente
+durante 2024.
 
 ```sql
 (SELECT nombre, apellido, DNI, telefono, direccion
@@ -33,8 +33,8 @@ WHERE fecha < "2024-01-01" or fecha > "2024-12-31");
 
 ### Iniciso 3
 
-> Listar nombre, descripción, precio y stock de productos vendidos al cliente con DNI 45789456,
-> pero que no fueron vendidos a clientes de apellido ‘Garcia’.
+* Listar nombre, descripción, precio y stock de productos vendidos al cliente con DNI 45789456,
+ pero que no fueron vendidos a clientes de apellido ‘Garcia’.
 
 ```sql
 (SELECT nombreP, descripcion, precio, stock
@@ -48,9 +48,8 @@ WHERE apellido = "Garcia");
 
 ### Iniciso 4
 
-> Listar nombre, descripción, precio y stock de productos no vendidos a clientes que tengan
-> teléfono con característica 221 (la característica está al comienzo del teléfono). Ordenar por
-> nombre.
+* Listar nombre, descripción, precio y stock de productos no vendidos a clientes que tengan
+teléfono con característica 221 (la característica está al comienzo del teléfono). Ordenar por nombre.
 
 ```sql
 SELECT nombreP, descripcion, precio, stock
@@ -63,8 +62,8 @@ Order by p.nombrep;
 
 ### Iniciso 5
 
-> Listar para cada producto nombre, descripción, precio y cuantas veces fue vendido. Tenga en
-> cuenta que puede no haberse vendido nunca el producto.
+* Listar para cada producto nombre, descripción, precio y cuantas veces fue vendido. Tenga en
+cuenta que puede no haberse vendido nunca el producto.
 
 ```sql
 SELECT p.nombreP, p.descripcion, p.precio, COUNT(d.idProducto) AS vecesVendido
@@ -74,8 +73,8 @@ GROUP BY p.idProducto, p.nombreP, p.descripcion, p.precio;
 
 ### Iniciso 6
 
-> Listar nombre, apellido, DNI, teléfono y dirección de clientes que compraron los productos con
-> nombre ‘prod1’ y ‘prod2’ pero nunca compraron el producto con nombre ‘prod3’.
+* Listar nombre, apellido, DNI, teléfono y dirección de clientes que compraron los productos con
+nombre ‘prod1’ y ‘prod2’ pero nunca compraron el producto con nombre ‘prod3’.
 
 ```sql
 ((SELECT nombre, apellido, DNI, telefono, direccion
@@ -106,8 +105,8 @@ WHERE p2.nombreP = "Prod3");
 
 ### Iniciso 7
 
-> Listar nroTicket, total, fecha, hora y DNI del cliente, de aquellas facturas donde se haya
-> comprado el producto ‘prod38’ o la factura tenga fecha de 2023.
+* Listar nroTicket, total, fecha, hora y DNI del cliente, de aquellas facturas donde se haya
+comprado el producto ‘prod38’ o la factura tenga fecha de 2023.
 
 ```sql
 SELECT nombreP, nroTicket, total, fecha, hora, dni
@@ -120,8 +119,8 @@ WHERE nombreP = "prod38" or (fecha between 2023-01-01 and 2023-12-31);
 
 ### Iniciso 8
 
-> Agregar un cliente con los siguientes datos: nombre:’Jorge Luis’, apellido:’Castor’, DNI:
-> 40578999, teléfono: ‘221-4400789’, dirección:’11 entre 500 y 501 nro:2587’ y el id de cliente: 500002. Se supone que el idCliente 500002 no existe.
+* Agregar un cliente con los siguientes datos: nombre:’Jorge Luis’, apellido:’Castor’, DNI:
+40578999, teléfono: ‘221-4400789’, dirección:’11 entre 500 y 501 nro:2587’ y el id de cliente: 500002. Se supone que el idCliente 500002 no existe.
 
 ```sql
 INSERT INTO Cliente (nombre, apellido, DNI, telefono, direccion, idCliente)
@@ -130,8 +129,8 @@ VALUES ("Jorge Luis", "Castor", 40578999, "221-4400789", "11 entre 500 y 501 nro
 
 ### Iniciso 9
 
-> Listar nroTicket, total, fecha, hora para las facturas del cliente ´Jorge Pérez´ donde no haya
-> comprado el producto ´Z´.
+* Listar nroTicket, total, fecha, hora para las facturas del cliente ´Jorge Pérez´ donde no haya
+comprado el producto ´Z´.
 
 ```sql
 SELECT nroTicket, total, fecha, hora
@@ -145,8 +144,8 @@ WHERE c.nombre = "Jorge" and c.apellido = "Perez"
 
 ### Iniciso 10
 
-> Listar DNI, apellido y nombre de clientes donde el monto total comprado, teniendo en cuenta
-> todas sus facturas, supere $100000.
+* Listar DNI, apellido y nombre de clientes donde el monto total comprado, teniendo en cuenta
+todas sus facturas, supere $100000.
 
 ```sql
 SELECT DNI, apellido, nombre
