@@ -139,5 +139,5 @@ GROUP BY e.nroEscenario, nombre_escenario
 * Modificar el nombre de la banda ‘Mempis la Blusera’ a: ‘Memphis la Blusera’.
 
 ```sql
-UPDATE Banda SET nombreBanda = 'Memphis la Blusera';
+UPDATE Banda SET nombreBanda = 'Memphis la Blusera' WHERE nombreBanda (SELECT nombreBanda FROM Banda WHERE nombreBanda = 'Mempis la Blusera';
 ```
